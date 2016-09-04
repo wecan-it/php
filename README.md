@@ -29,7 +29,7 @@ For PHP projects run through the command line interface (CLI), you can do the fo
 ### Create a `Dockerfile` in your PHP project
 
 ```dockerfile
-FROM php:5.5-cli
+FROM nyanpass/php5.5:5.5-cli
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
 CMD [ "php", "./your-script.php" ]
@@ -47,7 +47,7 @@ $ docker run -it --rm --name my-running-app my-php-app
 For many simple, single file projects, you may find it inconvenient to write a complete `Dockerfile`. In such cases, you can run a PHP script by using the PHP Docker image directly:
 
 ```console
-$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:5.5-cli php your-script.php
+$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp nyanpass/php5.5:5.5-cli php your-script.php
 ```
 
 ## With Apache
@@ -57,7 +57,7 @@ More commonly, you will probably want to run PHP in conjunction with Apache http
 ### Create a `Dockerfile` in your PHP project
 
 ```dockerfile
-FROM php:5.5-apache
+FROM nyanpass/php5.5:5.5-apache
 COPY src/ /var/www/html/
 ```
 
@@ -71,7 +71,7 @@ $ docker run -d --name my-running-app my-php-app
 We recommend that you add a custom `php.ini` configuration. `COPY` it into `/usr/local/etc/php` by adding one more line to the Dockerfile above and running the same commands to build and run:
 
 ```dockerfile
-FROM php:5.5-apache
+FROM nyanpass/php5.5:5.5-apache
 COPY config/php.ini /usr/local/etc/php/
 COPY src/ /var/www/html/
 ```
@@ -85,7 +85,7 @@ We provide the helper scripts `docker-php-ext-configure`, `docker-php-ext-instal
 In order to keep the images smaller, PHP's source is kept in a compressed tar file. To facilitate linking of PHP's source with any extension, we also provide the helper script `docker-php-source` to easily extract the tar or delete the extracted source. Note: if you do use `docker-php-source` to extract the source, be sure to delete it in the same layer of the docker image.
 
 ```Dockerfile
-FROM php:5.5-apache
+FROM nyanpass/php5.5:5.5-apache
 RUN docker-php-source extract \
 	# do important things \
 	&& docker-php-source delete
@@ -96,7 +96,7 @@ RUN docker-php-source extract \
 For example, if you want to have a PHP-FPM image with `iconv`, `mcrypt` and `gd` extensions, you can inherit the base image that you like, and write your own `Dockerfile` like this:
 
 ```dockerfile
-FROM php:5.5-fpm
+FROM nyanpass/php5.5:5.5-fpm
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -114,7 +114,7 @@ Remember, you must install dependencies for your extensions manually. If an exte
 Some extensions are not provided with the PHP source, but are instead available through [PECL](https://pecl.php.net/). To install a PECL extension, use `pecl install` to download and compile it, then use `docker-php-ext-enable` to enable it:
 
 ```dockerfile
-FROM php:5.5-fpm
+FROM nyanpass/php5.5:5.5-fpm
 RUN apt-get update && apt-get install -y libmemcached-dev \
 	&& pecl install memcached \
 	&& docker-php-ext-enable memcached
@@ -125,7 +125,7 @@ RUN apt-get update && apt-get install -y libmemcached-dev \
 Some extensions are not provided via either Core or PECL; these can be installed too, although the process is less automated:
 
 ```dockerfile
-FROM php:5.5-apache
+FROM nyanpass/php5.5:5.5-apache
 RUN curl -fsSL 'https://xcache.lighttpd.net/pub/Releases/3.2.0/xcache-3.2.0.tar.gz' -o xcache.tar.gz \
     && mkdir -p xcache \
     && tar -xf xcache.tar.gz -C xcache --strip-components=1 \
@@ -146,18 +146,18 @@ RUN curl -fsSL 'https://xcache.lighttpd.net/pub/Releases/3.2.0/xcache-3.2.0.tar.
 If you don't want to include a `Dockerfile` in your project, it is sufficient to do the following:
 
 ```console
-$ docker run -d -p 80:80 --name my-apache-php-app -v "$PWD":/var/www/html php:5.5-apache
+$ docker run -d -p 80:80 --name my-apache-php-app -v "$PWD":/var/www/html nyanpass/php5.5:5.5-apache
 ```
 
 # Image Variants
 
-The `php` images come in many flavors, each designed for a specific use case.
+The `nyanpass/php5.5` images come in many flavors, each designed for a specific use case.
 
-## `php:<version>`
+## `nyanpass/php5.5:<version>`
 
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-## `php:alpine`
+## `nyanpass/php5.5:alpine`
 
 This image is based on the popular [Alpine Linux project](http://alpinelinux.org), available in [the `alpine` official image](https://hub.docker.com/_/alpine). Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
 
