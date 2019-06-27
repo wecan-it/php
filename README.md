@@ -1,12 +1,12 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`5.5.38-cli`, `5.5-cli`, `5-cli`, `cli`, `5.5.38`, `5.5`, `5`, `latest` (*5.5/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/Dockerfile)
--	[`5.5.38-alpine`, `5.5-alpine`, `5-alpine`, `alpine` (*5.5/alpine/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/alpine/Dockerfile)
--	[`5.5.38-apache`, `5.5-apache`, `5-apache`, `apache` (*5.5/apache/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/apache/Dockerfile)
--	[`5.5.38-fpm`, `5.5-fpm`, `5-fpm`, `fpm` (*5.5/fpm/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/fpm/Dockerfile)
--	[`5.5.38-fpm-alpine`, `5.5-fpm-alpine`, `5-fpm-alpine`, `fpm-alpine` (*5.5/fpm/alpine/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/fpm/alpine/Dockerfile)
--	[`5.5.38-zts`, `5.5-zts`, `5-zts`, `zts` (*5.5/zts/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/zts/Dockerfile)
--	[`5.5.38-zts-alpine`, `5.5-zts-alpine`, `5-zts-alpine`, `zts-alpine` (*5.5/zts/alpine/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/zts/alpine/Dockerfile)
+-	[`5.5.9-cli`, `5.5-cli`, `5-cli`, `cli`, `5.5.9`, `5.5`, `5`, `latest` (*5.5/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/Dockerfile)
+-	[`5.5.9-alpine`, `5.5-alpine`, `5-alpine`, `alpine` (*5.5/alpine/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/alpine/Dockerfile)
+-	[`5.5.9-apache`, `5.5-apache`, `5-apache`, `apache` (*5.5/apache/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/apache/Dockerfile)
+-	[`5.5.9-fpm`, `5.5-fpm`, `5-fpm`, `fpm` (*5.5/fpm/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/fpm/Dockerfile)
+-	[`5.5.9-fpm-alpine`, `5.5-fpm-alpine`, `5-fpm-alpine`, `fpm-alpine` (*5.5/fpm/alpine/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/fpm/alpine/Dockerfile)
+-	[`5.5.9-zts`, `5.5-zts`, `5-zts`, `zts` (*5.5/zts/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/zts/Dockerfile)
+-	[`5.5.9-zts-alpine`, `5.5-zts-alpine`, `5-zts-alpine`, `zts-alpine` (*5.5/zts/alpine/Dockerfile*)](https://github.com/GitHub30/php/blob/5.5/5.5/zts/alpine/Dockerfile)
 
 For more information about this image and its history, please see [the relevant manifest file (`library/php`)](https://github.com/docker-library/official-images/blob/master/library/php). This image is updated via [pull requests to the `docker-library/official-images` GitHub repo](https://github.com/docker-library/official-images/pulls?q=label%3Alibrary%2Fphp).
 
